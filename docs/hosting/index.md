@@ -7,7 +7,7 @@ hide:
   - toc
 ---
 
-# Self-hosting n8n
+# 自托管 n8n
 
 This section provides guidance on setting up n8n for both the Enterprise and Community self-hosted editions. The Community edition is free, the Enterprise edition isn't. 
 
@@ -17,15 +17,15 @@ See [Community edition features](/hosting/community-edition-features.md) for a l
 
 - __Installation and server setups__
 
-	Install n8n on any platform using npm or Docker. Or follow our guides to popular hosting platforms.
+	使用 npm 或 Docker 在任何平台安装 n8n。 Or follow our guides to popular hosting platforms.
 
 	[:octicons-arrow-right-24: Docker installation guide](/hosting/installation/docker.md)
 
 - __Configuration__
 
-	Learn how to configure n8n with environment variables.
+	了解如何为 n8n 配置环境变量
 
-	[:octicons-arrow-right-24: Environment Variables](/hosting/configuration/environment-variables/index.md)
+	[:octicons-arrow-right-24: 环境变量](/hosting/configuration/environment-variables/index.md)
 
 - __Users and authentication__
 
@@ -41,7 +41,7 @@ See [Community edition features](/hosting/community-edition-features.md) for a l
 
 - __Securing n8n__
 
-	Secure your n8n instance by setting up SSL, SSO, or 2FA or blocking or opting out of some data collection or features.
+	通过配置 SSL、SSO 或二次认证（2FA），或禁用部分数据收集或功能，来加固您的 n8n 实例的安全性。
 
 	[:octicons-arrow-right-24: Securing n8n guide](/hosting/securing/overview.md)
 

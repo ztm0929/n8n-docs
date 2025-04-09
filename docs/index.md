@@ -7,7 +7,7 @@ hide:
   - path
 ---
 
-# Welcome to n8n Docs
+# 欢迎来到 n8n 文档
 
 
 This is the documentation for [n8n](https://n8n.io/){:target=_blank .external-link}, a [fair-code](https://faircode.io){:target=_blank .external-link} licensed workflow automation tool that combines AI capabilities with business process automation.
@@ -15,7 +15,7 @@ This is the documentation for [n8n](https://n8n.io/){:target=_blank .external-li
 It covers everything from setup to usage and development. It's a work in progress and all [contributions](/help-community/contributing.md) are welcome.
 
 
-## Where to start
+## 从何处开始
 
 <div class="grid cards" markdown>
 
@@ -27,14 +27,14 @@ It covers everything from setup to usage and development. It's a work in progres
 
 -   __Choose the right n8n for you__
 
-	Cloud, npm, self-host . . . 
+	云托管，npm，自托管等等 
 
     [:octicons-arrow-right-24: Options](/choose-n8n.md)
 
 
 -   __Explore integrations__
 
-    Browse n8n's integrations library.
+    浏览 n8n 的集成库
 
     [:octicons-arrow-right-24: Find your apps](/integrations/index.md)
 
@@ -47,8 +47,8 @@ It covers everything from setup to usage and development. It's a work in progres
 
 ## About n8n
 
-n8n (pronounced n-eight-n) helps you to connect any app with an API with any other, and manipulate its data with little or no code.
+n8n（发音为 n-eight-n）helps you to connect any app with an API with any other, and manipulate its data with little or no code.
 
 * Customizable: highly flexible workflows and the option to build custom nodes.
 * Convenient: use the npm or Docker to try out n8n, or the Cloud hosting option if you want us to handle the infrastructure.
-* Privacy-focused: self-host n8n for privacy and security.
+* 隐私优先：self-host n8n for privacy and security.

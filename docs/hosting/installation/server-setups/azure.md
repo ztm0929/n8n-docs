@@ -3,19 +3,19 @@
 contentType: tutorial
 ---
 
-# Hosting n8n on Azure
+# 在 Azure 托管 n8n 
 
-This hosting guide shows you how to self-host n8n on Azure. It uses n8n with Postgres as a database backend using Kubernetes to manage the necessary resources and reverse proxy.
+这份托管指南将指导您如何在 Azure 自托管 n8n。这里使用 Postgres 作为后端数据库，并使用 Kubernetes 来管理所需资源和反向代理。
 
-## Prerequisites
+## 先决条件
 
-You need [The Azure command line tool](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank" .external-link}
+您需要 [Azure CLI 工具](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli){:target="_blank" .external-link}
 
 --8<-- "_snippets/self-hosting/warning.md"
 
 --8<-- "_snippets/self-hosting/installation/latest-next-version.md"
 
-## Hosting options
+## 托管选项
 
 Azure offers several ways suitable for hosting n8n, including Azure Container Instances (optimized for running containers), Linux Virtual Machines, and Azure Kubernetes Service (containers running with Kubernetes).
 
@@ -53,28 +53,28 @@ And change directory to the root of the repository you cloned:
 cd azure
 ```
 
-## Configure Postgres
+## 配置 Postgres
 
 For larger scale n8n deployments, Postgres provides a more robust database backend than SQLite.
 
-### Configure volume for persistent storage
+### 配置 volume 以实现数据持久化
 
 To maintain data between pod restarts, the Postgres deployment needs a persistent volume. The default storage class is suitable for this purpose and is defined in the `postgres-claim0-persistentvolumeclaim.yaml` manifest.
 
 /// note | Specialized storage classes
 If you have specialised or higher requirements for storage classes, [read more on the options Azure offers in the documentation](https://learn.microsoft.com/en-us/azure/aks/concepts-storage#storage-classes){:target="_blank" .external-link}.
 ///
-### Postgres environment variables
+### Postgres 环境变量
 
-Postgres needs some environment variables set to pass to the application running in the containers.
+需要为 Postgres 配置一些环境变量，以将其传入正在容器中运行的应用。
 
 The example `postgres-secret.yaml` file contains placeholders you need to replace with your own values. Postgres will use these details when creating the database..
 
 The `postgres-deployment.yaml` manifest then uses the values from this manifest file to send to the application pods.
 
-## Configure n8n
+## 配置 n8n
 
-### Create a volume for file storage
+### 创建用于文件存储的 volume
 
 While not essential for running n8n, using persistent volumes is required for:
 
@@ -116,7 +116,7 @@ You can configure n8n settings and behaviors using environment variables.
 
 Create an `n8n-secret.yaml` file. Refer to [Environment variables](/hosting/configuration/environment-variables/index.md) for n8n environment variables details.
 
-## Deployments
+## 部署
 
 The two deployment manifests (`n8n-deployment.yaml` and `postgres-deployment.yaml`) define the n8n and Postgres applications to Kubernetes.
 
@@ -149,14 +149,14 @@ kubectl apply -f namespace.yaml
 ///
 
 
-## Set up DNS
+## 设置 DNS
 
 n8n typically operates on a subdomain. Create a DNS record with your provider for the subdomain and point it to the IP address of the n8n service. Find the IP address of the n8n service from the **Services & ingresses** menu item of the cluster you want to use under the **External IP** column. You need to add the n8n port, "5678" to the URL.
 
 /// note | Static IP addresses with AKS
 [Read this tutorial](https://learn.microsoft.com/en-us/azure/aks/static-ip){:target="_blank" .external-link} for more details on how to use a static IP address with AKS.
 ///
-## Delete resources
+## 删除资源
 
 Remove the resources created by the manifests with the following command:
 
@@ -164,6 +164,6 @@ Remove the resources created by the manifests with the following command:
 kubectl delete -f .
 ```
 
-## Next steps
+## 后续步骤
 
 --8<-- "_snippets/self-hosting/installation/server-setups-next-steps.md"
